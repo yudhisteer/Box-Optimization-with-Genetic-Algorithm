@@ -19,7 +19,7 @@ Genetic algorithm can be hard to understand if one does not have a Biology backg
 
 So before we get started we need to declare some variables for our problem. 
 
-- Max van capacity: ```10``` <img src="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" title="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" />
+- Max van capacity: ```3``` <img src="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" title="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" />
 - Each product are packaged in a box and each box has a ```priority value``` and ```volume``` associated with it.
 - The volume of the box is calculated by: ```length x width x height``` and the unit will be <img src="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" title="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" />. Initially we will only have the volume given to us instead of the dimensions. In the second part of the project we will study this limitation and improve our model.
 - The priority of a product is on a range of ```1 to 5``` with ```1``` being the **lowest** priority and ```5``` being the **highest** priority.
@@ -29,13 +29,17 @@ So before we get started we need to declare some variables for our problem.
 
 To add more content, we will visually display our problem statement below which will allow us to get a bigger picture of the dilemma we are facing.
 
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/160875541-0ea1c7f4-036d-4ee7-8792-0e784de3fe8e.png" width="600" height="270"/>
+</p>
 
+As a trial, we will have ```15``` items in total. Not all of them will fit in the van so our model will need to find the best combination of items:
 
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/160901405-4dccf911-8db9-4775-9685-77d73890ac48.png" />
+</p>
 
-
-
-
-
+The total volume of all the items is ```5.143``` cubic metres and the maximum capacity of our van is only ```3``` cubic metres. Therefore, <img src="https://latex.codecogs.com/png.image?\dpi{110}\geq&space;" title="https://latex.codecogs.com/png.image?\dpi{110}\geq " /> ```2.143``` cubic metres of product will need to be discarded when selecting the best possible solution. Now that we have setup our problem statement, we are ready to tackle the subject.
 
 
 ## Plan of Action
