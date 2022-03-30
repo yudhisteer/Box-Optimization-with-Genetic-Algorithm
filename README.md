@@ -6,7 +6,7 @@
 ## Research Questions
 
 ## Problem Statement
-Genetic algorithm can be hard to understand if one does not have a Biology background hence, for the purpose of this project we will initially assume we are a lucky delivery guy for Amazon Prime whose job will be deliver the products people ordered. However, it is us who has to decide which parcels to take in the van as we have a limited volume capacity. 
+Genetic algorithm can be hard to understand if one does not have a Biology background hence, for the purpose of this project we will initially assume we are a lucky delivery guy for Amazon Prime whose job will be deliver the products people ordered. However, it is us who has to decide which parcels to take in the van as we have a **limited volume capacity**. 
 
 **P.S.** You do not want to be like this guy below. But instead you want to make the choice of selecting each box in a clear scientific way that will maximize two things:
 
