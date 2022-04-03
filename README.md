@@ -319,14 +319,70 @@ The question is how are we going to evaluate the individual or chromose as we ha
   <img src= "https://user-images.githubusercontent.com/59663734/161442296-82d73636-bc3b-4733-9b78-eb626e20deac.png" width="800" height="200"/>
 </p>
 
+We will then create a new function ```fitness``` inside the Individual class. We initialize two variables: **score** and **sum_spaces** both to ```0```. We will update the score variable such that it will contain the total priority value for the items selected and sum_spaces will compute the total volume for the selected items. If our chromosome give us solutions such that sum_spaces > 3 <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />, i.e, it will not be possible to load all the slected items in the van, then we will punish the model by assigning it to a low score of ```1```.
 
 
+```
+    def fitness(self):
+        score = 0
+        sum_spaces = 0
+        
+        for i in range(len(self.chromosome)):  #len(chromosome) = 15
+            if self.chromosome[i] == '1':
+                score += self.priorities[i]
+                sum_spaces += self.spaces[i]
+                
+        if sum_spaces > self.space_limit:
+            score = 1            # asssign low score if exceed space limit
+            
+        self.score_evaluation = score
+        self.used_space = sum_spaces
+```
 
+When we call in our fitness function on individual1, we now get the total score and the used space by the products selected:
 
+```
+individual1.fitness()
+print('Score: ', individual1.score_evaluation)
+print('Used space: ', individual1.used_space)
+```
 
+```
+Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353]
+Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2]
+Chromosome:  ['1', '1', '1', '0', '1', '1', '0', '0', '0', '1', '0', '0', '1', '1', '1']
+Name:  Item 1
+Name:  Item 2
+Name:  Item 3
+Name:  Item 5
+Name:  Item 6
+Name:  Item 10
+Name:  Item 13
+Name:  Item 14
+Name:  Item 15
+Score:  27
+Used space:  2.9239899000000005
+```
 
+Here, we see that we got a total priority value, i.e a score of ```27``` and the total space used, i.e, the total volume of the products selected is ```2.9239899000000005``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> which is very good as it is nearly the maximum capacity of our van. Now if we run the code a few times, it will create different solutions because of our random function and we may get the one below:
 
-
+```
+Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353]
+Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2]
+Chromosome:  ['1', '0', '1', '0', '0', '1', '1', '0', '1', '0', '1', '1', '0', '1', '1']
+Name:  Item 1
+Name:  Item 3
+Name:  Item 6
+Name:  Item 7
+Name:  Item 9
+Name:  Item 11
+Name:  Item 12
+Name:  Item 14
+Name:  Item 15
+Score:  1
+Used space:  3.9303999999999997
+```
+We get a low score of ```1``` because the products selected (```3.9303999999999997``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) exceeds the space limit (```3``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) of our van. Therefore, it is impossible to load these products and thus, represents a bad solution.
 
 
 
