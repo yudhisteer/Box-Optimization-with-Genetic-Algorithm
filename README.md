@@ -97,10 +97,8 @@ If these variations continues over generations, these favorable **adaptations** 
   <img src= "https://user-images.githubusercontent.com/59663734/161419319-e61b6b10-dcf6-4021-8ff7-74ae8e263628.png" width="700" height="400"/>
 </p>
 
-
-
-
 #### 1.2 Artificial Selection
+Artificial selection is the identification by humans of desirable traits in plants and animals, and the steps taken to enhance and perpetuate those traits in future generations. Artificial selection works the same way as natural selection, except that with natural selection it is ```nature```, not ```human``` interference, that makes these decisions.
 
 
 #### 1.3 Evolutionary Algorithm
@@ -139,3 +137,4 @@ The genetic algorithm is a method for solving both constrained and unconstrained
 5. https://www.livescience.com/474-controversy-evolution-works.html
 6. https://theconversation.com/what-does-survival-of-the-fittest-mean-in-the-coronavirus-pandemic-look-to-the-immune-system-137355
 7. https://polarpedia.eu/en/natural-selection-and-adaptation/
+8. https://www.nationalgeographic.org/encyclopedia/artificial-selection/#:~:text=Artificial%20selection%20is%20the%20identification,those%20traits%20in%20future%20generations.
