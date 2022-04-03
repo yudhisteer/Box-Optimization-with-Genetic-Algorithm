@@ -146,7 +146,101 @@ The genetic algorithm uses ```3``` main types of rules at each step to create th
   <img src= "https://user-images.githubusercontent.com/59663734/161427650-3b3a7cce-8e2e-4347-ac6e-560f20382f84.png" width="550" height="700"/>
 </p>
 
-### 2. Product and Individual Class
+### 2. Class
+We will now build ```2``` class: one for the ```product``` and second for each ```individual``` item. We start with the product class:
+
+#### 2.1 Product Class
+
+All of the boxes have ```3``` attributes: **name**, **price** and **volume**. We will then build a class called ```Product``` which will allow us to generate items which will have these mentioned attributes. 
+
+```
+class Product():
+    def __init__(self, name, space, priority):
+        self.name = name
+        self.space = space
+        self.priority = priority
+```
+
+We create our first item **named** ```Item 1``` which has a **volume** of ```0.751``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> and **priority** ```1```. We assign it to a variable called ```p1```:
+
+```
+p1 = Product('Item 1', 0.751, 1)
+
+p1.name, p1.space, p1.priority
+```
+
+```
+('Item 1', 0.751, 1)
+```
+
+We want to create all the ```15``` products and we want them in a list. We start by creating an empty list in which we will append our products with their attributes:
+
+```
+products_list = []
+products_list.append(Product('Item 1', 0.751, 1))
+products_list.append(Product('Item 2', 0.0000899, 3))
+products_list.append(Product('Item 3', 0.400, 5))
+products_list.append(Product('Item 4', 0.290, 5))
+products_list.append(Product('Item 5', 0.200, 4))
+products_list.append(Product('Item 6', 0.00350, 4))
+products_list.append(Product('Item 7', 0.496, 1))
+products_list.append(Product('Item 8', 0.0424, 2))
+products_list.append(Product('Item 9', 0.0319, 1))
+products_list.append(Product('Item 10', 0.635, 2))
+products_list.append(Product('Item 11', 0.870, 3))
+products_list.append(Product('Item 12', 0.498, 3))
+products_list.append(Product('Item 13', 0.0544, 1))
+products_list.append(Product('Item 14', 0.527, 5))
+products_list.append(Product('Item 15', 0.353, 2))
+```
+
+We can then create a for loop to print all the products inside our list:
+
+```
+for product in products_list:
+    print(product.name, ' - ', product.space, ' - ', product.priority)
+```
+
+```
+Item 1  -  0.751  -  1
+Item 2  -  8.99e-05  -  3
+Item 3  -  0.4  -  5
+Item 4  -  0.29  -  5
+Item 5  -  0.2  -  4
+Item 6  -  0.0035  -  4
+Item 7  -  0.496  -  1
+Item 8  -  0.0424  -  2
+Item 9  -  0.0319  -  1
+Item 10  -  0.635  -  2
+Item 11  -  0.87  -  3
+Item 12  -  0.498  -  3
+Item 13  -  0.0544  -  1
+Item 14  -  0.527  -  5
+Item 15  -  0.353  -  2
+```
+
+
+#### 2.2 Individual Class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 2. Fitness Function
