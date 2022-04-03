@@ -100,8 +100,9 @@ If these variations continues over generations, these favorable **adaptations** 
 #### 1.2 Artificial Selection
 Artificial selection is the identification by humans of desirable traits in plants and animals, and the steps taken to enhance and perpetuate those traits in future generations. Artificial selection works the same way as natural selection, except that with natural selection it is ```nature```, not ```human``` interference, that makes these decisions.
 
-![brassica-oleracea 0](https://user-images.githubusercontent.com/59663734/161419680-d1fab4c5-e5fc-4456-a137-57749b386045.jpg)
-
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161419867-3d66dfba-e244-4ef5-8432-ff1dd23bdb70.png"/>
+</p>
 
 
 
