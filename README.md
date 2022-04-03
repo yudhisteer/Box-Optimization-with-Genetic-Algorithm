@@ -221,27 +221,94 @@ Item 15  -  0.353  -  2
 
 
 #### 2.2 Individual Class
+We will start with some fundamental definitions:
+
+- The process begins with a set of ```individuals``` which is called a ```Population```. 
+- Each **individual** is a ```solution``` to the problem we want to solve.
+- An individual is characterized by a set of parameters or variables known as ```Genes```. 
+- Genes are joined into a string to form a ```Chromosome (solution)```.
+In a genetic algorithm, the set of genes of an individual is represented using a ```string```, in terms of an alphabet. Usually, binary values are used (string of 1s and 0s). 
+- We say that we **encode** the genes in a chromosome.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161440105-d3b8e84c-a2c9-4b2d-a3c8-2e127a11921b.png" width="400" height="270"/>
+</p>
+
+**Note:** The number ```1``` assigned to a product means that we will select this product to be loaded in our van and the number ```0``` means we are not going to select the product. So our chromosom will be the set of 0s and 1s which indicate which product will be loaded or not.
 
 
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161439741-4bcb15cc-0aeb-4b25-adbc-f924db414ca4.png" width="700" height="120"/>
+</p>
 
+In the example above, our chromosome consists of ```15``` genes since we have ```15``` products to choose from. The solutions indicates that the items number **2**, **5**, **6**, **8**, **11**, **13** and **15** which are assigned the number ```1``` should be **selected** whereas the rests which are assgined the number ```0``` should be **discarded**.
 
+Now we will construct a second class called ```Individual``` which will take in a list containing all the **prices** of the products, a list of all the **priorities**, the **space limit** which is ```3``` cubic metres and a variable called **generation** with initial value of ```0```. We will also have an empty list for our **chromosome** which we will initialize with random values.
 
+```
+class Individual():
+    def __init__(self, spaces, priorities, space_limit, generation=0):  #space_limit = 3
+        self.spaces = spaces
+        self.priorities = priorities
+        self.space_limit = space_limit
+        self.generation = generation
+        self.chromosome = []
+        
+        for i in range(len(spaces)):  ## len(spaces) = 15
+            if random() < 0.5:
+                self.chromosome.append('0')
+            else:
+                self.chromosome.append('1')
+```
 
+We now create our lists which will contain the names, priorities and volumes of the products:
 
+```
+names = []
+spaces = []
+priorities = []
 
+for product in products_list:
+    names.append(product.name)
+    spaces.append(product.space)
+    priorities.append(product.priority)
+```
 
+We can now access our lists such that a particular index number of all the ```3``` lists represents the name, volume and priority of that particular item:
 
+```
+names[5], spaces[5], priorities[5]
+```
+```
+('Item 6', 0.0035, 4)
+```
+We will now create our first **individual** object using the Individual Class. It is important to note here that each time we run the cell below, the entries in the chromosome list will change since we are using a random function to initialize it. We will also associate the number ```1``` in our chromosome to the product selected.
 
+```
+individual1 = Individual(spaces, priorities)
 
+print('Spaces: ', individual1.spaces)
+print('Priorities: ', individual1.priorities)
+print('Chromosome: ', individual1.chromosome)
 
+for i in range(len(products_list)):
+    if individual1.chromosome[i] == '1':
+        print('Name: ', products_list[i].name)
+```
 
-
-
-
-
-
-
-
+```
+Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353]
+Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2]
+Chromosome:  ['1', '0', '0', '1', '0', '0', '1', '0', '0', '1', '1', '0', '1', '1', '1']
+Name:  Item 1
+Name:  Item 4
+Name:  Item 7
+Name:  Item 10
+Name:  Item 11
+Name:  Item 13
+Name:  Item 14
+Name:  Item 15
+```
 
 ### 2. Fitness Function
 
