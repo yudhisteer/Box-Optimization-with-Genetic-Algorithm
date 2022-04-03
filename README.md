@@ -97,24 +97,28 @@ If these variations continues over generations, these favorable **adaptations** 
   <img src= "https://user-images.githubusercontent.com/59663734/161419319-e61b6b10-dcf6-4021-8ff7-74ae8e263628.png" width="700" height="400"/>
 </p>
 
+To sum up:
+- generation after generation, natural selection acts as a kind of sieve, or a remover of undesirable traits. 
+- Organisms therefore gradually become better-suited for their environment. 
+- If the environment changes, natural selection will then push organisms to evolve in a different direction to adapt to their new circumstances.
+
 #### 1.2 Artificial Selection
 Artificial selection is the identification by humans of desirable traits in plants and animals, and the steps taken to enhance and perpetuate those traits in future generations. Artificial selection works the same way as natural selection, except that with natural selection it is ```nature```, not ```human``` interference, that makes these decisions.
+
+```Dog breeding``` is a prime example of artificial selection. Although all dogs are descendants of the wolf, the use of artificial selection has allowed humans to drastically alter the appearance of dogs. For centuries, dogs have been bred for various desired characteristics, leading to the creation of a wide range of dogs, from the tiny Chihuahua to the massive Great Dane.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161425895-3c30389f-b7b9-46ac-81c4-f4f36420bef7.jpg" width="700" height="300"/>
+</p>
+             
+             
+Today, bull terriers are bred to have a football-shaped head and thick, squat body – a far cry from the lean and handsome dog of 1915. Somewhere along its journey to a mutated skull and thick abdomen the bull terrier also picked up a number of other maladies like supernumerary teeth and compulsive tail-chasing.
+
+Many fruits and vegetables have been improved or even created through artificial selection. For example, broccoli, cauliflower, and cabbage were all derived from the ```wild mustard plant``` through selective breeding. Artificial selection appeals to humans since it is ```faster``` than natural selection and allows humans to ```mold``` organisms to their **needs**.
 
 <p align="center">
   <img src= "https://user-images.githubusercontent.com/59663734/161419867-3d66dfba-e244-4ef5-8432-ff1dd23bdb70.png"/>
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #### 1.3 Evolutionary Algorithm
@@ -125,8 +129,24 @@ An ```Evolutionary Algorithm (EA)``` uses mechanisms inspired by biological evol
 </p>
 
 #### 1.4 Genetic Algorithm
-The genetic algorithm is a method for solving both constrained and unconstrained optimization problems that is based on natural selection, the process that drives biological evolution. The genetic algorithm repeatedly modifies a population of individual solutions. At each step, the genetic algorithm selects individuals from the current population to be parents and uses them to produce the children for the next generation. Over successive generations, the population "evolves" toward an optimal solution. 
+The genetic algorithm (GA) is a method for solving both constrained and unconstrained optimization problems that is based on ```natural selection```, the process explained above that drives biological **evolution**. GA was developed by ```John H. Holland``` and his students and colleagues at the University of Michigan, of which David E. Goldberg is the most notable.
 
+
+So how does it work? The genetic algorithm repeatedly modifies a population of individual solutions. At each step, the genetic algorithm selects individuals from the current population to be parents and uses them to produce the children for the next generation. Over successive generations, the population ```"evolves"``` toward an **optimal solution**. 
+
+The genetic algorithm uses ```3``` main types of rules at each step to create the next generation from the current population:
+
+- ```Selection``` rules select the individuals, called **parents**, that contribute to the population at the next generation. The selection is generally **stochastic**, and can depend on the individuals' scores.
+
+- ```Crossover``` rules **combine** two parents to form **children** for the next generation.
+
+- ```Mutation``` rules apply **random** changes to individual parents to form children.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161427650-3b3a7cce-8e2e-4347-ac6e-560f20382f84.png" width="550" height="700"/>
+</p>
+
+### 2. Product and Individual Class
 
 
 ### 2. Fitness Function
