@@ -100,6 +100,21 @@ If these variations continues over generations, these favorable **adaptations** 
 #### 1.2 Artificial Selection
 Artificial selection is the identification by humans of desirable traits in plants and animals, and the steps taken to enhance and perpetuate those traits in future generations. Artificial selection works the same way as natural selection, except that with natural selection it is ```nature```, not ```human``` interference, that makes these decisions.
 
+![brassica-oleracea 0](https://user-images.githubusercontent.com/59663734/161419680-d1fab4c5-e5fc-4456-a137-57749b386045.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### 1.3 Evolutionary Algorithm
 An ```Evolutionary Algorithm (EA)``` uses mechanisms inspired by biological evolution, such as **reproduction**, **mutation**, **recombination**, and **selection**. Evolutionary Algorithms are widely used as a practical, robust optimization and search methods. There are numerous variants of evolutionary algorithms: ```genetic algorithms (GA)```, ```evolutionary strategies```, ```evolutionary programming```,  and  ```genetic programming```. Hence, Genetic Algorithm is a **subset** of Evolutionary Algorithm that simulates or models Genetics and Evolution (biological behavior) to optimize a highly complex function.
