@@ -173,7 +173,7 @@ p1.name, p1.space, p1.priority
 ('Item 1', 0.751, 1)
 ```
 
-We want to create all the ```15``` products and we want them in a list. We start by creating an empty list in which we will append our products with their attributes:
+We want to create all the ```15``` products and we want them in a list. We start by creating an **empty list** in which we will append our products with their attributes:
 
 ```
 products_list = []
@@ -194,7 +194,7 @@ products_list.append(Product('Item 14', 0.527, 5))
 products_list.append(Product('Item 15', 0.353, 2))
 ```
 
-We can then create a for loop to print all the products inside our list:
+We can then create a **for** loop to print all the products inside our list:
 
 ```
 for product in products_list:
