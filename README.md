@@ -316,7 +316,7 @@ The fitness function determines how **fit** an individual or chromosome is (the 
 The question is how are we going to evaluate the individual or chromose as we have a ```maximization``` problem where the goal is to maximize the priority by making use of the maximum capacity of our van. If we had a solution or chromose as shown below then the total volume of the products selected would be ```1.523``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> and the total priority would be ```19```. We can already evaluate that this is not a good solution as the capacity of the truck is ```3```<img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> and the products selected is about half of that. We will leave Amazon's warehouse with a van half-full which is not efficient at all. A good solution would be one that has the highest total priority value and that do not exceed the space limit.
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/59663734/161439741-4bcb15cc-0aeb-4b25-adbc-f924db414ca4.png" width="700" height="120"/>
+  <img src= "https://user-images.githubusercontent.com/59663734/161442296-82d73636-bc3b-4733-9b78-eb626e20deac.png" width="700" height="170"/>
 </p>
 
 
