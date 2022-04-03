@@ -384,13 +384,20 @@ Used space:  3.9303999999999997
 ```
 We get a low score of ```1``` because the products selected (```3.9303999999999997``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) exceeds the space limit (```3``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) of our van. Therefore, it is impossible to load these products and thus, represents a bad solution.
 
-
-
-
-
-
-
 ### 3. Crossover
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161449949-fd8e4e81-32f2-43cf-ac3e-123fac7efca0.png" width="700" height="150"/>
+</p>
+
+
+
+
+
+
+
+
+
 
 ### 4. Mutation
 
