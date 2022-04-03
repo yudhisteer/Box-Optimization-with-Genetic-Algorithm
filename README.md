@@ -231,7 +231,7 @@ In a genetic algorithm, the set of genes of an individual is represented using a
 - We say that we **encode** the genes in a chromosome.
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/59663734/161440105-d3b8e84c-a2c9-4b2d-a3c8-2e127a11921b.png" width="400" height="270"/>
+  <img src= "https://user-images.githubusercontent.com/59663734/161440105-d3b8e84c-a2c9-4b2d-a3c8-2e127a11921b.png" width="380" height="270"/>
 </p>
 
 **Note:** The number ```1``` assigned to a product means that we will select this product to be loaded in our van and the number ```0``` means we are not going to select the product. So our chromosom will be the set of 0s and 1s which indicate which product will be loaded or not.
@@ -311,6 +311,28 @@ Name:  Item 15
 ```
 
 ### 2. Fitness Function
+The fitness function determines how **fit** an individual or chromosome is (the ability of an individual to compete with other individuals). It gives a ```fitness score``` to each individual. The probability that an individual will be selected for reproduction is based on its fitness score.
+
+The question is how are we going to evaluate the individual or chromose as we have a ```maximization``` problem where the goal is to maximize the priority by making use of the maximum capacity of our van. If we had a solution or chromose as shown below then the total volume of the products selected would be ```1.523``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> and the total priority would be ```19```. We can already evaluate that this is not a good solution as the capacity of the truck is ```3```<img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" /> and the products selected is about half of that. We will leave Amazon's warehouse with a van half-full which is not efficient at all. A good solution would be one that has the highest total priority value and that do not exceed the space limit.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161439741-4bcb15cc-0aeb-4b25-adbc-f924db414ca4.png" width="700" height="120"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 3. Crossover
 
