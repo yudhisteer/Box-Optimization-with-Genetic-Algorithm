@@ -27,6 +27,8 @@ So before we get started we need to declare some variables for our problem.
 - On the other hand, a product such as a smartphone can have a **low volume** of 0.0000525 <img src="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" title="https://latex.codecogs.com/png.image?\dpi{110}m^{3}" /> but a **high priority** of ```5``` to be delievered. 
 - Naturally, we will have a ```maximization``` problem whereby we want to maximize the number of parcels (volume) to be carried in our van and maximize all the high priority parcels first.
 
+**Note:** The ```priority``` parameter is optional in the sense like we could have ```price``` instead or the amount of ```attachment``` we have for an object. We just need a second parameter which we want ```maximize``` - that is the higher the value, the better profitable it will be.
+
 To add more content, we will visually display our problem statement below which will allow us to get a bigger picture of the dilemma we are facing.
 
 <p align="center">
@@ -54,6 +56,65 @@ The total volume of all the items is ```5.143``` cubic metres and the maximum ca
 
 ### 1. Evolutionary vs Genetic Algorithms
 
+
+#### 1.1 Theory of Evolution
+
+Evolution is the process by which modern organisms have descended from ancient organisms over time. In his book ```"On the Origin of Species"``` published in 1859, ```Charles Darwin``` states that all species of organisms arise and develop through the **natural selection** of small, inherited variations that increase the individual's ability to **compete**, **survive**, and **reproduce**. 
+
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161418405-b01b9558-33f2-4736-bfd9-1ef09fcc1280.jpg" width="480" height="200" />
+</p>
+
+_“It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.”_ - Charles Darwin
+
+Charles Darwin popularized the concept of ```survival of the fittest``` as a mechanism underlying the natural selection that drives the evolution of life. Organisms with genes better suited to the environment are selected for survival and pass them to the next generation.
+
+#### 1.1 Natural Selection
+
+Sometimes it is not about having the most strength, good looks, intelligence or any such favourable features. Quite often unexpected things happen. In many environments, the individuals most likely to survive are not the strongest or the best looking, but those with many ```adaptive features```. They can more easily develop new skills if their living conditions suddenly change. Sometimes, it is even pure luck that determines if you are selected or not to survive or die. Below are detailed explanations about the process from Khan Academy.
+
+Darwin's theory was based on the mechanism of natural selection, which explains how populations can evolve in such a way that they become **better suited to their environments** over time.
+
+_According to the theory, individuals with traits that enable them to adapt to their environments will help them survive and have more offspring, which will inherit those traits. Individuals with less adaptive traits will less frequently survive to pass them on. Over time, the traits that enable species to survive and reproduce will become more frequent in the population and the population will change, or evolve. Through **natural selection**, Darwin suggested, genetically diverse species could arise from a **common ancestor**._
+
+
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161418796-cda4a3ab-d414-40f7-975a-b6ece1095421.png" width="800" height="300"/>
+</p>
+
+
+Individuals have **variations** within their heritable traits. Some variations make an individual better suited to survive and reproduce in their environment. For example, Darwin recognized that finches with beaks adapted to the specific food sources present on an island were more likely to survive and pass their genes to the next generation. Birds with the right beaks were defined as the fittest.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161419215-c33ea2d0-73da-4989-b118-7f2a900cbab2.png" width="480" height="450"/>
+</p>
+
+If these variations continues over generations, these favorable **adaptations** (the heritable features that aid survival and reproduction) will become more and more common in the population. The population will not only evolve (change in its genetic makeup and inherited traits), but will evolve in such a way that it becomes adapted, or better-suited, to its environment.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161419319-e61b6b10-dcf6-4021-8ff7-74ae8e263628.png" width="700" height="400"/>
+</p>
+
+
+
+
+#### 1.2 Artificial Selection
+
+
+#### 1.3 Evolutionary Algorithm
+An ```Evolutionary Algorithm (EA)``` uses mechanisms inspired by biological evolution, such as **reproduction**, **mutation**, **recombination**, and **selection**. Evolutionary Algorithms are widely used as a practical, robust optimization and search methods. There are numerous variants of evolutionary algorithms: ```genetic algorithms (GA)```, ```evolutionary strategies```, ```evolutionary programming```,  and  ```genetic programming```. Hence, Genetic Algorithm is a **subset** of Evolutionary Algorithm that simulates or models Genetics and Evolution (biological behavior) to optimize a highly complex function.
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161417026-c28df20f-6b93-40cd-a346-ef9dd522cd33.png" />
+</p>
+
+#### 1.4 Genetic Algorithm
+The genetic algorithm is a method for solving both constrained and unconstrained optimization problems that is based on natural selection, the process that drives biological evolution. The genetic algorithm repeatedly modifies a population of individual solutions. At each step, the genetic algorithm selects individuals from the current population to be parents and uses them to produce the children for the next generation. Over successive generations, the population "evolves" toward an optimal solution. 
+
+
+
 ### 2. Fitness Function
 
 ### 3. Crossover
@@ -75,3 +136,6 @@ The total volume of all the items is ```5.143``` cubic metres and the maximum ca
 2. https://stackoverflow.com/questions/2890061/what-is-the-difference-between-genetic-and-evolutionary-algorithms
 3. https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html
 4. https://medium.com/geekculture/introduction-to-genetic-algorithm-d417119040b7
+5. https://www.livescience.com/474-controversy-evolution-works.html
+6. https://theconversation.com/what-does-survival-of-the-fittest-mean-in-the-coronavirus-pandemic-look-to-the-immune-system-137355
+7. https://polarpedia.eu/en/natural-selection-and-adaptation/
