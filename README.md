@@ -385,12 +385,17 @@ Used space:  3.9303999999999997
 We get a low score of ```1``` because the products selected (```3.9303999999999997``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) exceeds the space limit (```3``` <img src="https://latex.codecogs.com/svg.image?\small&space;m^{3}" title="https://latex.codecogs.com/svg.image?\small m^{3}" />) of our van. Therefore, it is impossible to load these products and thus, represents a bad solution.
 
 ### 3. Crossover
+Crossover combines parts of the chromosome of two ```parents``` to generate more fit ```children```.  For each pair of parents to be ```mated```, a crossover point is chosen at **random** from within the genes. ```Offspring``` are created by exchanging the genes of parents among themselves until the ```crossover point``` is reached. The population tends to evolve and hence, we can create diversity through this combination.
+
+
+From the example below we see that Child 1 is composed of the **first part** of Parent 1 before the crossover point and the **second part** of Parent 2 after the crossover point and vice versa for Child 2. We apply this operation because it shows that if we combine the individuals or chromosomes then we will have better results over the generations. Note that Parent 1 and Parent 2 are from the ```first generation``` whereas Child 1 and Child 2 are from the ```second generation``` which is an **evolution** of the first generation.
+
 
 <p align="center">
   <img src= "https://user-images.githubusercontent.com/59663734/161449949-fd8e4e81-32f2-43cf-ac3e-123fac7efca0.png" width="700" height="150"/>
 </p>
 
-
+In our algorithm we have only one individual so we will need to create a second one to combine the chromosomes to create new individuals. Recall that the ```chromosome``` is the ```solution``` to our problem - the set of 0s and 1s whether a product should be loaded in our van or not. 
 
 
 
