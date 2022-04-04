@@ -441,7 +441,31 @@ Used space:  2.4728
 Chromosome:  ['1', '0', '1', '0', '1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '0']
 ```
 
-We see that we have two chromosomes, each one for individual1 and individual2 respectively. We now need to define a new function ```crossover``` to combine the chromosomes.
+We see that we have two chromosomes, each one for individual1 and individual2 respectively. We now need to define a new function ```crossover``` to combine the chromosomes. The function has a parameter ```other_individual``` which takes in the chromosome of individual2.
+
+```
+    def crossover(self,other_individual):
+        cutoff = round(random() * len(self.chromosome)) #to ensure cutoff between 0-15
+        print('Cutoff: ', cutoff)
+        
+        child1 = other_individual.chromosome[0:cutoff] + self.chromosome[cutoff::]
+        child2 = self.chromosome[0:cutoff] + other_individual.chromosome[cutoff::]
+        
+        print(child1)
+        print(child2)
+```
+
+```
+Chromosome:  ['0', '1', '1', '1', '0', '0', '1', '0', '1', '0', '1', '0', '0', '0', '1']
+
+Chromosome:  ['1', '1', '0', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0']
+
+Cutoff:  5
+['1', '1', '0', '1', '1', '0', '1', '0', '1', '0', '1', '0', '0', '0', '1']
+['0', '1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0']
+```
+
+We have a cutoff of 5 which means that as from the 6th entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
 
 
 ### 4. Mutation
