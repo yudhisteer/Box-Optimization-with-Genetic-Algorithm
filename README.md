@@ -517,7 +517,7 @@ To sum up:
 
 - In ```crossover``` we create a **new individual** while in ```mutation``` we create **diversity** in the population by randomly changing the genes of the chromosome.
 - ```Mutation``` happens less frequencty compared to ```crossover``` as it happens in nature.
-- Mutation changes the genes to a ```low probability``` of approx. 5% to 10%.
+- Mutation changes the genes to a ```low probability``` of approx. ```5%```.
 - Mutation of a bit is carried out by changing a ```0``` to ```1``` or vice versa.
 -  The mutation of a bit ```does not affect``` the probability of mutation of other bits.
 
@@ -526,10 +526,32 @@ To sum up:
   <img src= "https://user-images.githubusercontent.com/59663734/161696443-8da10422-6875-4f0c-af8b-7acd7919f0c7.png" width="600" height="100"/>
 </p>
 
-We will now define a new function called ```mutation``` have the parameter ```rate``` which indidates the probability of performing mutation:
+We will now define a new function called ```mutation``` have the parameter ```rate``` which indidates the probability of performing mutation. Since we want a lot probability of mutating then we will generate a random number and check if that number is less than our rate. If less then we will change our gene else it remains unchanged. Note that we need to do this process for each gene in our chromosome.
 
+```
+    def mutation(self, rate):
+        print('Before mutation: ', self.chromosome)
+        mutation_number = 0
+        for i in range(len(self.chromosome)): #accesing each gene in a chromosome
+            if random() < rate: 
+                mutation_number += 1
+                #print('Mutation occuring...')
+                if self.chromosome[i] == '1':
+                    self.chromosome[i] = '0'          
+                else:
+                    self. chromosome[i] = '1'
+        print('Number of mutations occurred: ', mutation_number)           
+        print('After mutation: ', self.chromosome)
+        return self
+```
+We choose a rate of ```0.05``` which is ```5%``` and we expect to have very little mutation throughout our chromosome:
+```
+Before mutation:  ['0', '0', '0', '0', '1', '0', '1', '1', '0', '0', '1', '0', '1', '0', '0']
+Number of mutations occurred:  2
+After mutation:  ['0', '0', '0', '0', '1', '0', '1', '1', '0', '0', '1', '1', '1', '0', '1']
+```
 
-
+As expected we mutated our chromose only **twice** at gene number ```12``` and gene number ```15```.
 
 
 
