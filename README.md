@@ -806,11 +806,9 @@ The idea of selection phase is to select the ```fittest individuals``` and let t
 
 The ```roulette wheel``` selection method is used for selecting all the individuals for the next generation. A roulette wheel is constructed from the relative fitness (**ratio of individual fitness and total fitness**) of each individual.  It is represented in the form of a pie chart where the area occupied by each individual on the roulette wheel is proportional to its relative fitness. Since an individual with better fitness value will occupy a bigger area in the pie chart, the probability of selecting it will also be higher. 
 
-
-
-
-
-
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161750033-7c4e692d-061c-4eca-a9c9-20ce67c3235f.png" width="500" height="350"/>
+</p>
 
 
 
