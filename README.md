@@ -807,13 +807,23 @@ The idea of selection phase is to select the ```fittest individuals``` and let t
 The ```roulette wheel``` selection method is used for selecting all the individuals for the next generation. A roulette wheel is constructed from the relative fitness (**ratio of individual fitness and total fitness**) of each individual.  It is represented in the form of a pie chart where the area occupied by each individual on the roulette wheel is proportional to its relative fitness. Since an individual with better fitness value will occupy a bigger area in the pie chart, the probability of selecting it will also be higher. 
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/59663734/161750033-7c4e692d-061c-4eca-a9c9-20ce67c3235f.png" width="500" height="350"/>
+  <img src= "https://user-images.githubusercontent.com/59663734/161756100-5baf0a1f-06eb-4496-a8ea-7571f148ed18.png" width="500" height="350"/>
 </p>
 
+Note however that there is also a low probability of selecting individual with a low score. This is important as it will create more diversity in the algorithm. If we always use the best solution all the time then the population will tend to be composed of similar individuals and lack diversity. 
 
 
+Now we need to create a function which will simulate this roulette wheel. We first create a function ```sum_evaluations``` which will calculate the **total score** for all the individuals in our population:
 
+```
+    def sum_evaluations(self):
+        sum = 0
+        for individual in self.population:
+            sum += individual.score_evaluation
+        return sum
+```
 
+Next, we will create another function ```select_parent``` which will take in ```sum_evaluation``` as a parameter which is the output of the function ```sum_evaluations``` 
 
 
 
