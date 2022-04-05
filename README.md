@@ -562,7 +562,7 @@ A population is a set of several ```individuals```. Each individual as its own s
 </p>
 
 
-We will start by creating a new class called ```GeneticAlgorithm``` which will take in the **population size** as parameter. We will have an empty list called ```population``` in which we will append our indivuals created by the ```Individual``` class.
+We will start by creating a new class called ```GeneticAlgorithm``` which will take in the **population size** as parameter. We will have an empty list called ```population``` in which we will append our individuals created by the ```Individual``` class.
 
 
 ```
@@ -761,53 +761,62 @@ We now have the score in ascending order with the highest one first:
 Individual:  0 
 Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353] 
 Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2] 
-Chromosome:  ['0', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '1', '0', '1', '1'] 
-Space Used:  2.0134898999999997 
-Score:  27 
+Chromosome:  ['0', '1', '1', '1', '0', '1', '0', '1', '1', '0', '1', '0', '1', '1', '1'] 
+Space Used:  2.5722899000000004 
+Score:  31 
 
 Individual:  1 
 Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353] 
 Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2] 
-Chromosome:  ['0', '0', '1', '1', '1', '1', '0', '0', '0', '0', '1', '1', '1', '0', '0'] 
-Space Used:  2.3158999999999996 
-Score:  25 
+Chromosome:  ['0', '1', '1', '1', '0', '0', '1', '0', '1', '0', '1', '0', '0', '1', '0'] 
+Space Used:  2.6149899000000003 
+Score:  23 
 
 Individual:  2 
 Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353] 
 Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2] 
-Chromosome:  ['1', '1', '0', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0'] 
-Space Used:  2.3219899 
-Score:  24 
-
-Individual:  3 
-Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353] 
-Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2] 
-Chromosome:  ['0', '1', '0', '0', '1', '1', '0', '1', '0', '0', '1', '0', '1', '1', '0'] 
-Space Used:  1.6973899000000001 
+Chromosome:  ['0', '1', '1', '0', '1', '0', '0', '1', '0', '1', '1', '0', '1', '0', '1'] 
+Space Used:  2.5548899 
 Score:  22 
+```
+While a list of best solutions is great, we are only interested in the one best solution, i.e, the first element in our population after the ```order_population``` function has been executed.
 
-Individual:  4 
-Spaces:  [0.751, 8.99e-05, 0.4, 0.29, 0.2, 0.0035, 0.496, 0.0424, 0.0319, 0.635, 0.87, 0.498, 0.0544, 0.527, 0.353] 
-Priorities:  [1, 3, 5, 5, 4, 4, 1, 2, 1, 2, 3, 3, 1, 5, 2] 
-Chromosome:  ['0', '1', '1', '0', '0', '0', '1', '1', '0', '0', '1', '0', '1', '1', '1'] 
-Space Used:  2.7428898999999998 
-Score:  22 
+We will then define a new function ```best_individual``` which will contain the individial from our population with the highest score.
+
+```
+    def best_individual(self, individual):
+        if individual.score_evaluation > self.best_solution.score_evaluation:
+            self.best_solution = individual
+```
+
+```
+ga.best_individual(ga.population[0])
+
+ga.best_solution.chromosome
+```
+We see that our best individual has a score of ```31``` and we can also access its chromosome:
+```
+['0', '1', '1', '1', '0', '1', '0', '1', '1', '0', '1', '0', '1', '1', '1']
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 7. Selecting Best Individuals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 8. Limitations
 
