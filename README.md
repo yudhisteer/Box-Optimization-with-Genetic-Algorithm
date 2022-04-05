@@ -551,15 +551,55 @@ Number of mutations occurred:  2
 After mutation:  ['0', '0', '0', '0', '1', '0', '1', '1', '0', '0', '1', '1', '1', '0', '1']
 ```
 
-As expected we mutated our chromose only **twice** at gene number ```12``` and gene number ```15```.
-
-
-
-
-
-
+As expected we had a low mutation rate -  **twice** at gene number ```12``` and gene number ```15```.
 
 ### 5. Population
+
+A population is a set of several ```individuals```. Each individual as its own solution - a set of 0s and 1s. We now need to define the number of individuals that our population will have. We need to perform a test in order to seek the best set of individuals that we need to create. 
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161732540-b79838d9-b7e1-4568-b448-d9f9cc4018d2.png" width="700" height="350"/>
+</p>
+
+
+We will start by creating a new class called ```GeneticAlgorithm``` which will take in the **population size** as parameter. We will have an empty list called ```population``` in which we will append our indivuals created by the ```Individual``` class.
+
+
+```
+class GeneticAlgorithm():
+    def __init__(self, population_size):
+        self.population_size = population_size
+        self.population = []
+        self.generation = 0
+        self.best_solution = None
+        self.list_of_solutions = []
+        
+    def initialize_population(self, spaces, priorities, space_limit):
+        for i in range(self.population_size):
+            self.population.append(Individual(spaces, priorities, space_limit)) #creating individuals
+            
+        self.best_solution = self.population[0] #initialize
+```
+We test with a population size of ```20``` and create our population of ```20``` individuals:
+```
+population_size = 20
+ga = GeneticAlgorithm(population_size)
+ga.initialize_population(spaces, priorities, space_limit)
+
+ga.population[5].chromosome
+```
+
+We can access our individuals by indexing the ```population``` list and find its chromosome:
+
+```
+['1', '0', '1', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '1', '1']
+```
+
+
+
+
+
+
 
 ### 6. Individuals
 
