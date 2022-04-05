@@ -456,16 +456,16 @@ We see that we have two chromosomes, each one for individual1 and individual2 re
 ```
 
 ```
-Chromosome:  ['0', '1', '1', '1', '0', '0', '1', '0', '1', '0', '1', '0', '0', '0', '1']
+Chromosome:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0']
 
-Chromosome:  ['1', '1', '0', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0']
+Chromosome:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1', '1']
 
-Cutoff:  5
-['1', '1', '0', '1', '1', '0', '1', '0', '1', '0', '1', '0', '0', '0', '1']
-['0', '1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '1', '1', '0']
+Cutoff:  10
+Child 1:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '0', '0']
+Child 2:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '1', '0', '1', '1', '1']
 ```
 
-We have a cutoff of 5 which means that as from the 6th entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
+We have a cutoff of 10 which means that as from the 11th entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
 
 Now, we need to put both childs in a list called ```children``` because recall that ```child1``` and ```child2``` are also **individuals or chromosomes** so they must also have the attributes ```spaces```, ```priorities```, ```space_limit```, and ```generation``` when we defined our class ```Individual```.
 
@@ -477,7 +477,7 @@ Now, we need to put both childs in a list called ```children``` because recall t
         children[1].chromosome = child2
         return children
 ```
-If we now run the code we get Score and used space for child1:
+If we now run the code we get **Score** and **Space Used** for **child1**:
 ```
 children[0].fitness()
 print('Score: ',children[0].score_evaluation)
@@ -492,7 +492,7 @@ Chromosome:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '
 ```
 
 
-Score and used space for child2:
+**Score** and **Space Used** for **child2**:
 ```
 children[1].fitness()
 print('Score: ',children[1].score_evaluation)
@@ -506,8 +506,36 @@ Used space:  3.3449
 Chromosome:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '1', '0', '1', '1', '1']
 ```
 
+Notice that children[0] is the same as child1 and children[1] is the same as child2 except that now we have it as a chromosome and hence, we can compute the space of the products selected and the total priority value.
+
 
 ### 4. Mutation
+
+Mutation is an operation where some individual genes are taken from an offspring and **mutated** or **changed**. This is primarily done to maintain ```diversity``` in the population and also to avoid any ```premature convergence```. Please note here that the mutating locations are chosen at ```random```.  This implies that some of the bits in the bit string can be flipped. 
+
+To sum up: 
+
+- In ```crossover``` we create a **new individual** while in ```mutation``` we create **diversity** in the population by randomly changing the genes of the chromosome.
+- ```Mutation``` happens less frequencty compared to ```crossover``` as it happens in nature.
+- Mutation changes the genes to a ```low probability``` of approx. 5% to 10%.
+- Mutation of a bit is carried out by changing a ```0``` to ```1``` or vice versa.
+-  The mutation of a bit ```does not affect``` the probability of mutation of other bits.
+
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/161696443-8da10422-6875-4f0c-af8b-7acd7919f0c7.png" width="600" height="100"/>
+</p>
+
+We will now define a new function called ```mutation``` have the parameter ```rate``` which indidates the probability of performing mutation:
+
+
+
+
+
+
+
+
+
 
 ### 5. Population
 
