@@ -413,32 +413,32 @@ print('Score: ', individual2.score_evaluation)
 print('Used space: ', individual2.used_space)
 print('Chromosome: ', individual2.chromosome)
 ```
-Now if we run individual1 we got:
+Now if we run individual1 we get:
 ```
-Name:  Item 3
+Name:  Item 1
+Name:  Item 4
+Name:  Item 6
 Name:  Item 7
-Name:  Item 9
-Name:  Item 10
-Name:  Item 12
-Name:  Item 14
-Score:  17
-Used space:  2.5879000000000003
-Chromosome:  ['0', '0', '1', '0', '0', '0', '1', '0', '1', '1', '0', '1', '0', '1', '0']
+Name:  Item 13
+Score:  12
+Used space:  1.5949
+Chromosome:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0']
 ```
 
 And when running individual2 we get:
 
 ```
-Name:  Item 1
 Name:  Item 3
-Name:  Item 5
+Name:  Item 4
 Name:  Item 8
+Name:  Item 9
+Name:  Item 10
 Name:  Item 12
-Name:  Item 13
 Name:  Item 14
-Score:  21
-Used space:  2.4728
-Chromosome:  ['1', '0', '1', '0', '1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '0']
+Name:  Item 15
+Score:  25
+Used space:  2.7773000000000003
+Chromosome:  ['0', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '1', '0', '1', '1']
 ```
 
 We see that we have two chromosomes, each one for individual1 and individual2 respectively. We now need to define a new function ```crossover``` to combine the chromosomes. The function has a parameter ```other_individual``` which takes in the chromosome of individual2.
@@ -456,16 +456,16 @@ We see that we have two chromosomes, each one for individual1 and individual2 re
 ```
 
 ```
+Chromosome:  ['0', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '1', '0', '1', '1']
+
 Chromosome:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0']
 
-Chromosome:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1', '1']
-
-Cutoff:  10
-Child 1:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '0', '0']
-Child 2:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '1', '0', '1', '1', '1']
+Cutoff:  5
+Child 1:  ['0', '0', '1', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0']
+Child 2:  ['1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '0', '1', '0', '1', '1']
 ```
 
-We have a cutoff of 10 which means that as from the 11th entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
+We have a cutoff of ```5``` which means that as from the ```6th``` entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
 
 Now, we need to put both childs in a list called ```children``` because recall that ```child1``` and ```child2``` are also **individuals or chromosomes** so they must also have the attributes ```spaces```, ```priorities```, ```space_limit```, and ```generation``` when we defined our class ```Individual```.
 
@@ -486,9 +486,9 @@ print('Chromosome: ', children[0].chromosome)
 ```
 
 ```
-Score:  26
-Used space:  2.8299898999999997
-Chromosome:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '0', '0']
+Score:  16
+Used space:  1.2438999999999998
+Chromosome:  ['0', '0', '1', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1', '0', '0']
 ```
 
 
@@ -502,8 +502,8 @@ print('Chromosome: ', children[1].chromosome)
 
 ```
 Score:  1
-Used space:  3.3449
-Chromosome:  ['1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '1', '0', '1', '1', '1']
+Used space:  3.1283000000000003
+Chromosome:  ['1', '0', '0', '1', '0', '0', '0', '1', '1', '1', '0', '1', '0', '1', '1']
 ```
 
 Notice that children[0] is the same as child1 and children[1] is the same as child2 except that now we have it as a chromosome and hence, we can compute the space of the products selected and the total priority value.
