@@ -800,10 +800,11 @@ We see that our best individual has a score of ```31``` and we can also access i
 ```
 
 
-### 7. Selecting Best Individuals
+### 7. Selection
+The idea of selection phase is to select the ```fittest individuals``` and let them pass their genes to the ```next generation```. Two pairs of individuals (**parents**) are selected based on their ```fitness scores```. Individuals with high fitness have more chance to be selected for reproduction.
 
 
-
+The ```roulette wheel``` selection method is used for selecting all the individuals for the next generation. A roulette wheel is constructed from the relative fitness (**ratio of individual fitness and total fitness**) of each individual.  It is represented in the form of a pie chart where the area occupied by each individual on the roulette wheel is proportional to its relative fitness. Since an individual with better fitness value will occupy a bigger area in the pie chart, the probability of selecting it will also be higher. 
 
 
 
