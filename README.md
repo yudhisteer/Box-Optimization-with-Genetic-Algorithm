@@ -467,7 +467,7 @@ Cutoff:  5
 
 We have a cutoff of 5 which means that as from the 6th entry in our parent chromosome we will have a crossover with the second individual. Note that as we run the code again we will have a different cutoff point as the later depends on a random function. 
 
-Now, we need to put both childs in a list called ```children``` because recall that ```Child1``` and ```Child2``` are also **individuals or chromosomes** so they must also have the attributes ```spaces```, ```priorities```, ```space_limit```, and ```generation``` when we defined our class ```Individual```.
+Now, we need to put both childs in a list called ```children``` because recall that ```child1``` and ```child2``` are also **individuals or chromosomes** so they must also have the attributes ```spaces```, ```priorities```, ```space_limit```, and ```generation``` when we defined our class ```Individual```.
 
 ```
         children = [Individual(self.spaces, self.priorities, self.space_limit, self.generation+1),
@@ -477,7 +477,7 @@ Now, we need to put both childs in a list called ```children``` because recall t
         children[1].chromosome = child2
         return children
 ```
-If we now run the code:
+If we now run the code we get Score and used space for child1:
 ```
 children[0].fitness()
 print('Score: ',children[0].score_evaluation)
@@ -491,6 +491,8 @@ Used space:  2.8299898999999997
 Chromosome:  ['1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '1', '0', '0']
 ```
 
+
+Score and used space for child2:
 ```
 children[1].fitness()
 print('Score: ',children[1].score_evaluation)
