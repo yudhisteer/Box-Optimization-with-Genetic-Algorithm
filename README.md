@@ -1071,7 +1071,7 @@ Every time we run the code we will get a new solution so for this trial we got o
 
 ![newplot (3)](https://user-images.githubusercontent.com/59663734/161955614-27094015-c147-418d-add2-ea349bb0e484.png)
 
-The graph below shows the total space used for all the generations. Our solution at generation ```46``` has a volume of ```2.91529``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. The red dashed line shows the maximum capacity of the truck. We see tha tthe solutions exceeded the limit at two instances:  generation ```41``` and ```83```.
+The graph below shows the total space used for all the generations. Our solution at generation ```46``` has a volume of ```2.91529``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. The red dashed line shows the maximum capacity of the truck. We see that the solutions exceeded the limit at two instances:  generation ```41``` and ```83```.
 
 ![newplot (4)](https://user-images.githubusercontent.com/59663734/161955636-86bdfdd2-2284-4801-9ada-f0a74ed94bcd.png)
 
