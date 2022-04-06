@@ -1065,21 +1065,22 @@ Name:  Item 15  - Priority:  2  - Volume:  0.353
 ```
 
 ### 10. Visualization
-Visualization will help us better in analyzing the best individual in each generation. We alread yhave an empty list called ```list_of_solutions``` so we will append our best individual for each generation in it and create a graph using ```Plotly```:
+Visualization will help us better in analyzing the best individual in each generation. We already have an empty list called ```list_of_solutions``` so we will append our best individual for each generation in it and create a graph using ```Plotly```:
 
+Every time we run the code we will get a new solution so for this trial we got our maximum score of ```34``` at generation ```46```. Notice that our graph has 2 troughs at generation ```41``` and ```83```. This is because the solution exceeded the maximum capacity of the truck and so the solution had a low score of only  ```1```.
 
 ![newplot (3)](https://user-images.githubusercontent.com/59663734/161955614-27094015-c147-418d-add2-ea349bb0e484.png)
 
-
+The graph below shows the total space used for all the generations. Our solution at generation ```46``` has a volume of ```2.91529``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. The red dashed line shows the maximum capacity of the truck. We see tha tthe solutions exceeded the limit at two instances:  generation ```41``` and ```83```.
 
 ![newplot (4)](https://user-images.githubusercontent.com/59663734/161955636-86bdfdd2-2284-4801-9ada-f0a74ed94bcd.png)
 
 
-
+When we plot both data in one graph we see that the troughs of the total score coincide the peaks of the total space used. This is because for solutions which has a total used space > ```3``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> we gave them a score of ```1```.
 ![newplot (6)](https://user-images.githubusercontent.com/59663734/161955950-c2b2bfb4-ab2f-48d8-9191-6598e5463f37.png)
 
 
-
+Note that at generation ```65``` we had a higher total space used of ```2.94579``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> however at this generation we had a total score of only ```25```. So although we had a solution which gives us a much higher total space used, we could not optimized for the total score.
 
 
 ## Conclusion
