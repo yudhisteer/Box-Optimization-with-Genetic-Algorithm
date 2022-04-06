@@ -943,7 +943,7 @@ Note that the code above is creating only ```one``` new generation. However, we 
 
 
 ### 9. Complete Genetic Algorithm
-Finally, we already have bits and pieces of our genetic algorithm. We just need to put them in place as in our process flow. We create a function called ```solve``` which will take in the ```mutation_probability```, number_of_generations``` which is our **stopping criterion**, ```spaces```, ```prices``` and ```space limit``` as parameters.
+Finally, we already have bits and pieces of our genetic algorithm. We just need to put them in place as in our process flow. We create a function called ```solve``` which will take in the ```mutation_probability```, ```number_of_generations``` which is our **stopping criterion**, ```spaces```, ```prices``` and ```space limit``` as parameters.
 
 1. Create **initial population** of individuals.
 2. Evaluate initial population using **fitness score**.
