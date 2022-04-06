@@ -1094,7 +1094,7 @@ While our Genetic Algorithm works perfectly fine in selecting the products which
 
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/59663734/162056324-1bb9a520-5469-4e9f-9c10-965793494aa1.png" width="700" height="290"/>
+  <img src= "https://user-images.githubusercontent.com/59663734/162058630-bc7a23df-44c5-4a70-9b0e-494a9c1498c7.png" width="700" height="250"/>
 </p>
 
 In the example above we see that both boxes have a volume of ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. However, the box of dimensions ```2m x 2m x 2m``` can easily be loaded in the van which the one with dimensions ```1m x 1m x 8m``` is protruded from the van. Our algorithm defined above could tell us to choose a box of volume ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> for instance but when taking the dimensions into account we see that it is not feasible.
