@@ -8,13 +8,13 @@
 
 ## Plan of Action
 1. Evolutionary vs Genetic Algorithms
-2. Fitness Function
-3. Crossover
-4. Mutation
-5. Population
-6. Individuals
-7. Selecting Best Individuals
-8. Limitations
+2. Class
+4. Crossover
+5. Mutation
+6. Population
+7. Individuals
+8. Selecting Best Individuals
+9. Limitations
 
 ## Problem Statement
 Genetic algorithm can be hard to understand if one does not have a Biology background hence, for the purpose of this project we will initially assume we are a lucky delivery guy for Amazon Prime whose job will be deliver the products people ordered. However, it is us who has to decide which parcels to take in the van as we have a **limited volume capacity**. 
@@ -1065,6 +1065,11 @@ Name:  Item 14  - Priority:  5  - Volume:  0.527
 Name:  Item 15  - Priority:  2  - Volume:  0.353
 ```
 
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/162053138-63b57649-3209-4b3e-840b-a714b76075d7.png" width="850" height="170"/>
+</p>
+
+
 ### 10. Visualization
 Visualization will help us better in analyzing the best individual in each generation. We already have an empty list called ```list_of_solutions``` so we will append our best individual for each generation in it and create a graph using ```Plotly```:
 
@@ -1084,6 +1089,25 @@ When we plot both data in one graph we see that the troughs of the total score c
 Note that at generation ```65``` we had a higher total space used of ```2.94579``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> however at this generation we had a total score of only ```25```. So although we had a solution which gives us a much higher total space used, we could not optimized for the total score.
 
 ### 11. Limitations
+
+While our Genetic Algorithm works perfectly fine in selecting the products which both optimize the ```total volume occupied``` and the ```total priority value```, one parameter that it does not take into account is the ```dimensions``` of the boxes. And this is a crucial parameter as although the algorithm shows us that a specifc box of a sepecific volume should be loaded in the truck then it is not always feasible to load the box if the dimensions are not taken into account. 
+
+
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/162056324-1bb9a520-5469-4e9f-9c10-965793494aa1.png" width="700" height="290"/>
+</p>
+
+In the example above we see that both boxes have a volume of ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. However, the box of dimensions ```2m x 2m x 2m``` can easily be loaded in the van which the one with dimensions ```1m x 1m x 8m``` is protruded from the van. Our algorithm defined above could tell us to choose a box of volume ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> for instance but when taking the dimensions into account we see that it is not feasible.
+
+
+
+
+
+
+
+
+
+
 
 
 ## Conclusion
