@@ -953,7 +953,7 @@ Finally, we already have bits and pieces of our genetic algorithm. We just need 
 6. Create **children** using **crossover**.
 7. Apply **mutation** to new children.
 8. Append children to **new generation**.
-9. **Discard** old generation to append new generation in population list.
+9. Discard **old generation** to append **new generation** in population list.
 10. Evaluate **current population** using fitness score.
 11. Select **best individual** in each generation.
 12. Select **best generation**.
