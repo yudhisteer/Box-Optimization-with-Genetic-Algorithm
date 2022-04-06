@@ -929,17 +929,140 @@ Before mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '
 After mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0']
 ```
 
-Note that the code above is creating only ```one``` new generation. However, we need to create several new generations using a ```stopping criterion```:
+Note that the code above is creating only ```one``` new generation. However, we need to create several new generations using a ```stopping criterion```. We will first create a function which will allow us to visualize the best individual from each generation.
+
+```
+    def visualize_generation(self):
+        best = self.population[0]
+        print('Generation: ', ga.population[0].generation,
+              'Chromosome: ', best.chromosome,
+             'Total priorities: ', best.score_evaluation,
+             'Total Space Used: ', best.used_space)
+```
 
 
 
+### 9. Complete Genetic Algorithm
+Finally, we already have bits and pieces of our genetic algorithm. We just need to put them in place as in our process flow. We create a function called ```solve``` which will take in the ```mutation_probability```, number_of_generations``` which is our **stopping criterion**, ```spaces```, ```prices``` and ```space limit``` as parameters.
 
+1. Create **initial population** of individuals.
+2. Evaluate initial population using **fitness score**.
+3. **Order** individuals to put the fittest one at the top of the population.
+4. Set **number of generations**  - stopping criterion.
+5. Select **fittest parents** from each generation.
+6. Create **children** using **crossover**.
+7. Apply **mutation** to new children.
+8. Append children to **new generation**.
+9. **Discard** old generation to append new generation in population list.
+10. Evaluate **current population** using fitness score.
+11. Select **best individual** in each generation.
+12. Select **best generation**.
 
+```
+    def solve(self, mutation_probability, number_of_generations, spaces, prices, limit):
+        
+        # create initial population
+        self.initialize_population(spaces, prices, limit)
+        
+        # calculate fitness score for each individual
+        for individual in self.population:
+            individual.fitness()
+            
+        # order individuals to put fittest first
+        self.order_population()
+        
+        # visualize fittest individual
+        self.visualize_generation()
+        
+        # Stopping criterion - number of generations to create
+        for generation in range(number_of_generations):
+            sum = self.sum_evaluations()
+            new_population = []
+            for new_individuals in range(0, ga.population_size, 2): # 0, 2, 4,... , 18 
+                
+                # select parents
+                parent1 = self.select_parent(sum)
+                parent2 = self.select_parent(sum)
+                
+                # create new children
+                children = self.population[parent1].crossover(ga.population[parent2])
+                
+                # apply mutation and append children to new population
+                new_population.append( children[0].mutation(mutation_probability))
+                new_population.append( children[1].mutation(mutation_probability))
+             
+            # discard old population
+            self.population = list(new_population)
+           
+            #evaluate current population
+            for individual in self.population:
+                individual.fitness()
+                
+            # visualize best individual in each generation
+            self.visualize_generation()
+            best = self.population[0]
+            self.best_individual(best)
+        
+        print('\n','*** Best Solution ***', '\n',
+            'Generation: ', self.best_solution.generation, '\n',
+            'Chromosome: ', self.best_solution.chromosome, '\n',
+            'Total priorities: ', self.best_solution.score_evaluation, '\n',
+            'Total Space Used: ', self.best_solution.used_space)
+    
+        return self.best_solution.chromosome
+```
 
+We will create a population of ```20``` individuals for ```100``` generations with the following parameters:
 
+```
+limit = 3
+population_size = 20
+mutation_probability = 0.01
+number_of_generations = 100 
+```
 
+Here's the best individuals from the first 11 generations:
 
+```
+Generation:  0  -  Total priorities:  30  -  Total Space Used:  2.9074899  -  Chromosome:  ['0', '1', '1', '1', '1', '1', '1', '0', '1', '1', '0', '1', '0', '0', '1']
+Generation:  1  -  Total priorities:  18  -  Total Space Used:  2.1383899  -  Chromosome:  ['1', '1', '0', '1', '0', '0', '1', '1', '1', '0', '0', '0', '0', '1', '0']
+Generation:  2  -  Total priorities:  17  -  Total Space Used:  1.6423899  -  Chromosome:  ['1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '1', '0']
+Generation:  3  -  Total priorities:  16  -  Total Space Used:  1.7403000000000002  -  Chromosome:  ['0', '0', '0', '1', '0', '0', '1', '1', '1', '0', '0', '0', '0', '1', '1']
+Generation:  4  -  Total priorities:  29  -  Total Space Used:  2.8638898999999998  -  Chromosome:  ['1', '1', '1', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1', '0', '0']
+Generation:  5  -  Total priorities:  26  -  Total Space Used:  2.5947899  -  Chromosome:  ['1', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '1', '1', '1', '0']
+Generation:  6  -  Total priorities:  21  -  Total Space Used:  2.7007898999999997  -  Chromosome:  ['1', '1', '1', '1', '0', '0', '1', '1', '1', '1', '0', '0', '1', '0', '0']
+Generation:  7  -  Total priorities:  22  -  Total Space Used:  2.3663898999999997  -  Chromosome:  ['1', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '1', '0', '0', '1']
+Generation:  8  -  Total priorities:  24  -  Total Space Used:  1.6437898999999998  -  Chromosome:  ['0', '1', '0', '1', '1', '0', '0', '1', '1', '0', '0', '1', '1', '1', '0']
+Generation:  9  -  Total priorities:  22  -  Total Space Used:  1.3457899000000002  -  Chromosome:  ['0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '1', '1', '0']
+Generation:  10  -  Total priorities:  26  -  Total Space Used:  2.5947899  -  Chromosome:  ['1', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '1', '1', '1', '0']
+```
 
+Our optimal solution was found at Generation ```84``` with a total space used of ```2.9928898999999998```<img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />, a total priority value of ```35``` and a total percentage volume occupied in our van of ```99.762 %``` which is extremely efficient:
+
+```
+ *** Best Solution *** 
+ Generation:  84 
+ Chromosome:  ['0', '1', '1', '1', '1', '1', '0', '0', '1', '1', '0', '1', '1', '1', '1'] 
+ Total priorities:  35 
+ Total Space Used:  2.9928898999999998
+ Percentage of volume used:  99.762 %
+```
+
+We can also get the names of the items which we will load in our van:
+
+```
+Name:  Item 2  - Priority:  3  - Volume:  8.99e-05
+Name:  Item 3  - Priority:  5  - Volume:  0.4
+Name:  Item 4  - Priority:  5  - Volume:  0.29
+Name:  Item 5  - Priority:  4  - Volume:  0.2
+Name:  Item 6  - Priority:  4  - Volume:  0.0035
+Name:  Item 9  - Priority:  1  - Volume:  0.0319
+Name:  Item 10  - Priority:  2  - Volume:  0.635
+Name:  Item 12  - Priority:  3  - Volume:  0.498
+Name:  Item 13  - Priority:  1  - Volume:  0.0544
+Name:  Item 14  - Priority:  5  - Volume:  0.527
+Name:  Item 15  - Priority:  2  - Volume:  0.353
+```
 
 
 
