@@ -1082,6 +1082,8 @@ When we plot both data in one graph we see that the troughs of the total score c
 
 Note that at generation ```65``` we had a higher total space used of ```2.94579``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> however at this generation we had a total score of only ```25```. So although we had a solution which gives us a much higher total space used, we could not optimized for the total score.
 
+### 11. Limitations
+
 
 ## Conclusion
 
