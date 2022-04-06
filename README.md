@@ -1,9 +1,20 @@
 # Box Optimization with Genetic Algorithm
 
+## Research Questions
+
+## Methods
 
 ## Abstract
 
-## Research Questions
+## Plan of Action
+1. Evolutionary vs Genetic Algorithms
+2. Fitness Function
+3. Crossover
+4. Mutation
+5. Population
+6. Individuals
+7. Selecting Best Individuals
+8. Limitations
 
 ## Problem Statement
 Genetic algorithm can be hard to understand if one does not have a Biology background hence, for the purpose of this project we will initially assume we are a lucky delivery guy for Amazon Prime whose job will be deliver the products people ordered. However, it is us who has to decide which parcels to take in the van as we have a **limited volume capacity**. 
@@ -43,16 +54,6 @@ As a trial, we will have ```15``` items in total. Not all of them will fit in th
 
 The total volume of all the items is ```5.143``` cubic metres and the maximum capacity of our van is only ```3``` cubic metres. Therefore, <img src="https://latex.codecogs.com/png.image?\dpi{110}\geq&space;" title="https://latex.codecogs.com/png.image?\dpi{110}\geq " /> ```2.143``` cubic metres of product will need to be discarded when selecting the best possible solution. Now that we have setup our problem statement, we are ready to tackle the subject.
 
-
-## Plan of Action
-1. Evolutionary vs Genetic Algorithms
-2. Fitness Function
-3. Crossover
-4. Mutation
-5. Population
-6. Individuals
-7. Selecting Best Individuals
-8. Limitations
 
 ### 1. Evolutionary vs Genetic Algorithms
 
