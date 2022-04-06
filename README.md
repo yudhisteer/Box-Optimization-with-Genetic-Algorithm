@@ -1090,7 +1090,7 @@ Note that at generation ```65``` we had a higher total space used of ```2.94579`
 
 ### 11. Limitations
 
-While our Genetic Algorithm works perfectly fine in selecting the products which both optimize the ```total volume occupied``` and the ```total priority value```, one parameter that it does not take into account is the ```dimensions``` of the boxes. And this is a crucial parameter as although the algorithm shows us that a specifc box of a sepecific volume should be loaded in the truck then it is not always feasible to load the box if the dimensions are not taken into account. 
+While our Genetic Algorithm works perfectly fine in selecting the products which both optimize the ```total volume occupied``` and the ```total priority value```, one parameter that it does not take into account is the ```dimensions``` of the boxes. And this is a crucial parameter as although the algorithm shows us that a specifc box of a sepecific volume should be loaded in the truck then we have to be aware that it is not always feasible to load the box if the dimensions are not taken into account. 
 
 
 <p align="center">
