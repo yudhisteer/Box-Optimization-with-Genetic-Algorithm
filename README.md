@@ -1065,6 +1065,20 @@ Name:  Item 15  - Priority:  2  - Volume:  0.353
 ```
 
 ### 10. Visualization
+Visualization will help us better in analyzing the best individual in each generation. We alread yhave an empty list called ```list_of_solutions``` so we will append our best individual for each generation in it and create a graph using ```Plotly```:
+
+
+![newplot (3)](https://user-images.githubusercontent.com/59663734/161955614-27094015-c147-418d-add2-ea349bb0e484.png)
+
+
+
+![newplot (4)](https://user-images.githubusercontent.com/59663734/161955636-86bdfdd2-2284-4801-9ada-f0a74ed94bcd.png)
+
+
+
+![newplot (6)](https://user-images.githubusercontent.com/59663734/161955950-c2b2bfb4-ab2f-48d8-9191-6598e5463f37.png)
+
+
 
 
 
