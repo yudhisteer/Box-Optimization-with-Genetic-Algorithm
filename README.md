@@ -864,10 +864,86 @@ Used Space:  1.8921999999999999
 Score:  25
 ```
 
-Note here that we did not select the best individuals in our population which is of index ```1``` and ```2``` respectively. We chose average ones and this is important as it will help us to create diversity in our population and allow us to achieve better results. 
+Note here that we did not select the best individuals in our population which is of index ```1``` and ```2``` respectively. We chose average ones and this is important as it will help us to create diversity in our population and allow us to achieve better results. However, note that because of our roulette wheel method we have a high probability of selecting the top individuals in our population and a low probability of selecting those with a score of ```1```.
+
+### 8. New Generation
+We know how to select ```parents```, create ```children``` using crossover and apply ```mutation``` to those children to have ```diversity```. We will now create a new generation from the functions explained above. 
+
+- Select ```2``` fittest **parents** from our population.
+- Create **children** from the parents using crossover.
+- Apply **mutation** to children created.
+- Add children to **new population**.
 
 
-### 8. Limitations
+We will select ```20``` parents in total to mate so that we will get ```40``` children:
+```
+new_population = []
+mutation_probability = 0.01
+for new_individuals in range(0, ga.population_size, 2): # 0, 2, 4,... , 18 
+    #print(new_individuals)
+    parent1 = ga.select_parent(sum)
+    parent2 = ga.select_parent(sum)
+    print('Selecting parents: ', parent1, ' - ',parent2)
+    print('Parent 1: ', ga.population[parent1].chromosome)
+    print('Parent 2: ', ga.population[parent2].chromosome)
+    
+    children = ga.population[parent1].crossover(ga.population[parent2])
+    print('Child 1: ', children[0].chromosome)
+    print('Child 2: ',children[1].chromosome)
+    
+    new_population.append( children[0].mutation(mutation_probability))
+    new_population.append( children[1].mutation(mutation_probability))
+    print(' ')
+```
+
+Below is the first ```3``` results:
+```
+Selecting parents:  4  -  2
+Parent 1:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Parent 2:  ['0', '0', '0', '1', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+Child 1:  ['0', '0', '0', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Child 2:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+Before mutation:  ['0', '0', '0', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+After mutation:  ['0', '0', '0', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Before mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+After mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+ 
+Selecting parents:  1  -  2
+Parent 1:  ['0', '1', '1', '1', '0', '0', '0', '1', '1', '1', '0', '1', '1', '1', '1']
+Parent 2:  ['0', '0', '0', '1', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+Child 1:  ['0', '0', '0', '1', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '1']
+Child 2:  ['0', '1', '1', '1', '0', '0', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+Before mutation:  ['0', '0', '0', '1', '1', '1', '0', '1', '1', '1', '0', '1', '1', '1', '1']
+After mutation:  ['0', '0', '0', '1', '1', '1', '0', '1', '1', '1', '0', '0', '1', '1', '1']
+Before mutation:  ['0', '1', '1', '1', '0', '0', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+After mutation:  ['0', '1', '1', '1', '0', '0', '0', '0', '1', '0', '1', '1', '1', '1', '1']
+ 
+Selecting parents:  4  -  5
+Parent 1:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Parent 2:  ['0', '0', '1', '1', '1', '0', '0', '0', '1', '0', '0', '0', '1', '1', '0']
+Child 1:  ['0', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Child 2:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0']
+Before mutation:  ['0', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+After mutation:  ['0', '0', '1', '1', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '1']
+Before mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0']
+After mutation:  ['1', '1', '1', '0', '1', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0']
+```
+
+Note that the code above is creating only ```one``` new generation. However, we need to create several new generations using a ```stopping criterion```:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Conclusion
 
