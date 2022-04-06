@@ -807,7 +807,7 @@ The idea of selection phase is to select the ```fittest individuals``` and let t
 The ```roulette wheel``` selection method is used for selecting all the individuals for the next generation. A roulette wheel is constructed from the relative fitness (**ratio of individual fitness and total fitness**) of each individual.  It is represented in the form of a pie chart where the area occupied by each individual on the roulette wheel is proportional to its relative fitness. Since an individual with better fitness value will occupy a bigger area in the pie chart, the probability of selecting it will also be higher. 
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/59663734/161756100-5baf0a1f-06eb-4496-a8ea-7571f148ed18.png" width="500" height="350"/>
+  <img src= "https://user-images.githubusercontent.com/59663734/161756100-5baf0a1f-06eb-4496-a8ea-7571f148ed18.png" width="460" height="350"/>
 </p>
 
 Note however that there is also a low probability of selecting individual with a low score. This is important as it will create more diversity in the algorithm. If we always use the best solution all the time then the population will tend to be composed of similar individuals and lack diversity. 
@@ -823,8 +823,48 @@ Now we need to create a function which will simulate this roulette wheel. We fir
         return sum
 ```
 
-Next, we will create another function ```select_parent``` which will take in ```sum_evaluation``` as a parameter which is the output of the function ```sum_evaluations``` 
+Next, we will create another function ```select_parent``` which will take in ```sum_evaluation``` as a parameter which is the output of the function ```sum_evaluations```. We will first generate a random number and multiply it by the total score and assign it to a variable called ```random_value```. Then in a while loop we will aggregate each score in the population as from index ```0``` and we select the individual at the index when the aggregate score exceeds the ```random_value```.
 
+```
+    def select_parent(self, sum_evaluation):
+        parent = -1 #random initialization for variable
+        random_value = random() * sum_evaluation
+        sum = 0
+        i = 0
+        print('Random value: ', random_value)
+        while i < (len(self.population)) and sum < random_value:
+            sum += self.population[i].score_evaluation
+            print('i: ', i, ' - ', 'Sum:', sum)
+            parent += 1
+            i += 1
+        return parent
+```
+
+For our first parent we select index ```4``` in our population:
+```
+Random value:  116.30013449371388
+i:  0  -  Sum: 32
+i:  1  -  Sum: 57
+i:  2  -  Sum: 82
+i:  3  -  Sum: 107
+i:  4  -  Sum: 131
+Chromosome:  ['0', '1', '1', '0', '1', '1', '0', '0', '0', '1', '0', '0', '1', '1', '0']
+Used Space:  1.8199899
+Score:  24
+```
+For the second parent we select index ```3``` in our population:
+```
+Random value:  99.877334343137
+i:  0  -  Sum: 32
+i:  1  -  Sum: 57
+i:  2  -  Sum: 82
+i:  3  -  Sum: 107
+Chromosome:  ['0', '0', '1', '1', '1', '1', '0', '1', '1', '0', '1', '0', '1', '0', '0']
+Used Space:  1.8921999999999999
+Score:  25
+```
+
+Note here that we did not select the best individuals in our population which is of index ```1``` and ```2``` respectively. We chose average ones and this is important as it will help us to create diversity in our population and allow us to achieve better results. 
 
 
 ### 8. Limitations
