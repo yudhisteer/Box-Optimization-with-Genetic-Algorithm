@@ -147,6 +147,19 @@ The genetic algorithm uses ```3``` main types of rules at each step to create th
   <img src= "https://user-images.githubusercontent.com/59663734/161427650-3b3a7cce-8e2e-4347-ac6e-560f20382f84.png" width="550" height="700"/>
 </p>
 
+```
+START
+Generate the initial population
+Compute fitness
+REPEAT
+    Selection
+    Crossover
+    Mutation
+    Compute fitness
+UNTIL population has converged
+STOP
+```
+
 ### 2. Class
 We will now build ```2``` class: one for the ```product``` and second for each ```individual``` item. We start with the product class:
 
