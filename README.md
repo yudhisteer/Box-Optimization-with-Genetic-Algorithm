@@ -1099,8 +1099,12 @@ While our Genetic Algorithm works perfectly fine in selecting the products which
 
 In the example above we see that both boxes have a volume of ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" />. However, the box of dimensions ```2m x 2m x 2m``` can easily be loaded in the van while the one with dimensions ```1m x 1m x 8m``` is protruded from the van. Our algorithm defined above could tell us to choose a box of volume ```8``` <img src="https://latex.codecogs.com/svg.image?m^{3}" title="https://latex.codecogs.com/svg.image?m^{3}" /> for instance but when taking the dimensions into account we see that it is not feasible.
 
+So now instead of working with the maximum capacity of the van directly, we will work with its ```dimensions``` and as such we will be working with the volume **explicitly**:
 
 
+<p align="center">
+  <img src= "https://user-images.githubusercontent.com/59663734/162129670-3c484684-d049-44da-aebb-1f5b05076014.png" width="550" height="220"/>
+</p>
 
 
 
